@@ -1,29 +1,59 @@
 import React from "react"
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
 import Form from "./components/Form"
 import Home from "./components/Home"
 import Confirmation from "./components/Confirmation"
 import About from "./components/About"
 import "./App.css"
-
+import errorimg from "./components/error404.png"
+import { findByLabelText } from "@testing-library/dom"
 const App = () => {
   //Style for App
   const myStyle = {
     backgroundColor: "#018c96",
-    outerHeight: "400px",
   }
+
+  const navStyle = {
+    display: "flex",
+    justifyContent: "space-around",
+    border: "1px solid black",
+    fontSize: "2em",
+    fontFamily: "futura",
+    style: "none",
+    backgroundColor: "#eb5401",
+    textDecoration: "none",
+  }
+
   return (
     <div className="appDiv" style={myStyle}>
       <h1>Lambda Eats</h1>
-
-      <Link to="/">Home</Link>
-      <Link to="/form">Form</Link>
-      <Link to="/about">About</Link>
-
-      <Route exact path="/" component={Home} />
-      <Route path="/form" component={Form} />
-      <Route path="/about" component={About} />
-
+      <nav style={navStyle}>
+        <Link style={{ textDecoration: "none" }} to="/">
+          Home
+        </Link>
+        <Link style={{ textDecoration: "none" }} to="/form">
+          Form
+        </Link>
+        <Link style={{ textDecoration: "none" }} to="/about">
+          About
+        </Link>
+      </nav>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/form" exact component={Form} />
+        <Route path="/about" exact component={About} />
+        <Route path="/comfirmation" exact component={Confirmation} />
+        //Custom Error 404 Page
+        <Route
+          path="/"
+          render={() => (
+            <div>
+              <img src={errorimg} />
+              Where are you trying to go my friend? This page doesn't exist
+            </div>
+          )}
+        />
+      </Switch>
       <p>Lambda Pizza now hiring!</p>
     </div>
   )
