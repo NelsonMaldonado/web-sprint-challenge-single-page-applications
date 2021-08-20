@@ -42,6 +42,8 @@ Form validation is a way to make sure that whoever is using your website they ty
 
 1. In 1-2 sentences, define end to end testing.
 
+End to end testing is a way to simulate user actions and to make sure that your app is functional and working as you intended .
+
 ## Instructions
 
 ### Task 1: Project Set Up

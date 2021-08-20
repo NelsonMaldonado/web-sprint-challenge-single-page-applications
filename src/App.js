@@ -31,7 +31,7 @@ const App = () => {
         <Link style={{ textDecoration: "none" }} to="/">
           Home
         </Link>
-        <Link style={{ textDecoration: "none" }} to="/form">
+        <Link style={{ textDecoration: "none" }} id="order-pizza" to="/pizza">
           Form
         </Link>
         <Link style={{ textDecoration: "none" }} to="/about">
@@ -40,7 +40,7 @@ const App = () => {
       </nav>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/form" exact component={Form} />
+        <Route path="/pizza" exact component={Form} />
         <Route path="/about" exact component={About} />
         <Route path="/comfirmation" exact component={Confirmation} />
         //Custom Error 404 Page
