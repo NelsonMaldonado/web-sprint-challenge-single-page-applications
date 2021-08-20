@@ -1,7 +1,7 @@
 import React from "react"
 
 function Form() {
-  return <h1>This is the Form Page</h1>
+  return <h2>Form Page</h2>
 }
 
 export default Form
