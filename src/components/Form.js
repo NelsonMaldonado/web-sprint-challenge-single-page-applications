@@ -141,12 +141,14 @@ function Form() {
           <br></br>
           <input
             maxLength="30"
-            id="fnameinput"
+            id="name-input"
             name="fname"
             type="text"
             placeholder="Anything else you'd like to add?"
           />
         </label>
+        <input type="submit" id="special-text" />
+        <input type="submit" id="order-button" />
       </div>
     </form>
   )
